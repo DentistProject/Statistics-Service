@@ -20,6 +20,6 @@ npm start
 
 In root directory, run:
 ```
-# docker build -t statistics-service .
-# docker run -p 5177:5177 statistics-service
+docker build -t statistics-service .
+docker run -p 5177:5177 statistics-service
 ```
