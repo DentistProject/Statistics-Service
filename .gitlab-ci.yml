@@ -1,0 +1,29 @@
+image: node:18-alpine
+
+# Cache modules in between jobs per-branch
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - server/node_modules/
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  tags:
+    - docker
+  script:
+    - npm install
+
+test:
+  stage: test
+  tags:
+    - docker
+  script:
+    # Assuming newman is already a part of your devDependencies in package.json
+    - npm install
+    # Run the newman test, replace 'StatisticsService.postman_collection.json' with your actual file name
+    # If you have an environment file, include it with the `-e` flag
+    - newman run StatisticsService.postman_collection.json
