@@ -26,4 +26,4 @@ test:
     - npm install
     # Run the newman test, replace 'StatisticsService.postman_collection.json' with your actual file name
     # If you have an environment file, include it with the `-e` flag
-    - newman run StatisticsService.postman_collection.json
+    - npx newman run StatisticsService.postman_collection.json
