@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "newman run StatisticsService.postman_collection.json"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
     "express": "^4.18.2",
     "nodemon": "^3.0.2",
     "socket.io": "^4.7.3"
+  },
+  "devDependencies": {
+    "newman": "^6.1.0"
   }
 }
